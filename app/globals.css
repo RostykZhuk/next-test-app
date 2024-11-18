@@ -1,0 +1,67 @@
+@import "swiper/css";
+@import 'swiper/css/navigation';
+@import 'swiper/css/pagination';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+}
+
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    @apply bg-green-50;
+}
+
+/* Preloader inner circle  animation*/
+@keyframes spin-reverse {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+.animate-spin-reverse {
+    animation: spin-reverse 2s linear infinite;
+}
+
+/* Swiper custom styles */
+.swiper-button-next,
+.swiper-button-prev {
+    @apply text-primary-400 hidden sm:block;
+}
+
+.swiper-pagination-bullet {
+    @apply bg-primary-400 opacity-60;
+}
+
+.swiper-pagination-bullet-active {
+    @apply bg-primary-500 opacity-100;
+}
+
+.swiper-pagination {
+    @apply mb-10;
+}
