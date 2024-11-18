@@ -1,4 +1,4 @@
-interface AnswerRecord {
+export interface AnswerRecord {
     taskId: string;
     optionId: string;
 }

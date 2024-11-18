@@ -2,7 +2,7 @@
 
 ## Overview
 
-This app is a worksheet. You start the application and see several questions. You solve it and see if your answer is correct. Then you swipe to the next question and choose the answer, and so on. You can choose an answer as many times as you like.
+This app is a worksheet. Here you can answer questions and see which questions you have already answered and which ones you have not. You can also see which answer you selected last.
 
 
 From the technical side, there are mock data in the folder -
@@ -13,11 +13,16 @@ Data is received through a separate “Service” - `utils/DAL`
 
 Utils also has several additional functions for the application.
 `utils/checkAnswer.ts` - based on utils/mockData/keys.json, checks the selected answer and determines whether it is correct
-`utils/handleAnswer.ts` - simulates storing user answers. Writes the ID of the question and the ID of the answer chosen by the user to this question to the localstorage
+`utils/handleAnswer.ts` - simulates storing user answers. Writes the ID of the question and the ID of the answer chosen by the user to this question to sessionstorage
 `utils/useAppState.ts` - a hook that processes the current state of the application
 
-The components of the application itself are located in `app/components`. There are separate Header and Preloader. 
-`app/components/MainContent` stores the components responsible for rendering the slider, which is the main content of the application. 
+The components of the application itself are located in `components`. There are separate Header and Preloader. 
+`components/MainContent` stores the components responsible for rendering the slider, which is the main content of the application. 
+
+Main routers of the app:
+`/` - home page, where you can see the welcome message
+`/questions` - a page where you can take several questions (as many as are mocked)
+`/my-answers` - a page where you can check which questions you have already answered and how
 
 Also, the application simulates a slight delay when loading and selecting an answer to simulate network operations delay
 
@@ -53,4 +58,4 @@ Ensure you have the following installed:
 	•	Run production build:
 `npm run start`
 	•	Lint the code:
-`npm run lint`# next-test-app
+`npm run lint`

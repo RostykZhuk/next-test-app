@@ -1,28 +1,7 @@
-"use client"
-import { WorksheetTasksData } from "@/utils/DAL/api";
-import { useAppState } from "@/utils/useAppState";
-import { Header } from "./components/Header";
-import { Preloader } from "./components/Preloader";
-import { MainContent } from "./components/MainContent/MainContent";
-
 export default function Home() {
-  const {
-    tasks,
-    loading,
-    errorMessage,
-  }: { tasks: WorksheetTasksData; loading: boolean; errorMessage: string } =
-    useAppState();
-
   return (
-    <>
-      <Header />
-      {errorMessage ? (
-        <p>Sorry, unfortunetly we have error. {errorMessage}</p>
-      ) : loading ? (
-        <Preloader />
-      ) : (
-        <MainContent tasks={tasks} />
-      )}
-    </>
+    <h1 className="text-primary-500 font-bold text-xl sm:text-3xl md:text-6xl lg:text-8xl xl:text-9xl text-center shadow-md p-6 m-6 mt-32 rounded-lg bg-white border border-gray-300">
+      Welcome to <span className="text-primary-400">WorkSheet</span>
+    </h1>
   );
 }
